@@ -71,7 +71,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        <h1>Zoom WebSDK Sample React</h1>
+        <h1>Zoom test Gentelab</h1>
         <label>Meeting ID:</label>
         <input type="text" value={meetingNumber} onChange={(e) => setMeetingNumber(e.target.value)}/>
         <div>
