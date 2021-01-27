@@ -1,5 +1,6 @@
 import './App.css';
 import { ZoomMtg } from '@zoomus/websdk';
+import { useState } from 'react';
 
 ZoomMtg.setZoomJSLib('https://source.zoom.us/1.8.6/lib', '/av');
 
@@ -11,7 +12,7 @@ function App() {
   // setup your signature endpoint here: https://github.com/zoom/websdk-sample-signature-node.js
   var signatureEndpoint = 'https://signature-zoom-gentelab.herokuapp.com/'
   var apiKey = 'C8cuieDoTqqEk2UWbkLcFw'
-  var meetingNumber = '99615763568'
+  const [meetingNumber, setMeetingNumber] = useState('99615763568');
   var role = 0
   var leaveUrl = 'http://localhost:3000'
   var userName = 'ReactRenna'
@@ -71,8 +72,11 @@ function App() {
     <div className="App">
       <main>
         <h1>Zoom WebSDK Sample React</h1>
-
+        <label>Meeting ID:</label>
+        <input type="text" value={meetingNumber} onChange={(e) => setMeetingNumber(e.target.value)}/>
+        <div>
         <button onClick={getSignature}>Join Meeting</button>
+        </div>
       </main>
     </div>
   );
